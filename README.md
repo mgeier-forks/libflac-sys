@@ -25,6 +25,15 @@ libflac-sys = "0.2"
 ```
 
 
+Incompatibility
+---------------
+
+```toml
+[target.'cfg(all(windows, target_env = "gnu"))'.dependencies]
+libflac-sys = "<= 0.2.2"
+```
+
+
 Features
 --------
 
