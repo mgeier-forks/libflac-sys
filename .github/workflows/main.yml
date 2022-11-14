@@ -25,6 +25,9 @@ jobs:
         uses: dtolnay/rust-toolchain@master
         with:
           toolchain: stable${{ matrix.toolchain-suffix }}
+      - name: Build library
+        run: |
+          cargo build --workspace --all-features -vv
       - name: Run tests
         run: |
           cargo test --workspace --all-features
@@ -98,6 +101,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: true
+      - name: Build library
+        run: |
+          cargo build --workspace --all-features -vv
       - name: Run tests
         run: |
           cargo test --workspace --all-features
