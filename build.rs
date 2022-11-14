@@ -7,6 +7,7 @@ fn main() {
 fn main() {
     let mut flac_config = cmake::Config::new("flac");
     flac_config
+        .very_verbose(true)
         .define("BUILD_CXXLIBS", "OFF")
         .define("BUILD_PROGRAMS", "OFF")
         .define("BUILD_EXAMPLES", "OFF")
@@ -18,6 +19,7 @@ fn main() {
 
     if cfg!(feature = "build-ogg") {
         let ogg_path = cmake::Config::new("ogg")
+            .very_verbose(true)
             .define("BUILD_SHARED_LIBS", "OFF")
             .define("INSTALL_DOCS", "OFF")
             .define("INSTALL_PKG_CONFIG_MODULE", "OFF")
